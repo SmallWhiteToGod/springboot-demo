@@ -1,0 +1,11 @@
+############ mysql-开始 ###########
+spring:
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+jdbc:
+  driver: com.mysql.jdbc.Driver
+  url: jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true&zeroDateTimeBehavior=convertToNull&useServerPrepStmts=true&jdbcCompliantTruncation=false
+  username: root
+  password: 123456
