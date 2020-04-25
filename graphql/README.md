@@ -22,3 +22,56 @@ mutation{
   }
 }
 
+query{
+  findAuthorById(id:1){
+    id
+    firstName
+    books{
+      id
+      title
+    }
+  }
+  
+  findAllBooks{
+    id
+    title
+  }
+}
+
+//带参数的查询 {"authorId": 1}
+query getAutho($authorId: Long!) {
+  findAuthorById(id: $authorId) {
+    id
+    firstName
+    books {
+      id
+      title
+    }
+  }
+}
+
+//自定义输入类型
+mutation($input:BookInput!){
+  saveBook(input:$input){
+    id
+    title
+    pageCount
+    author{
+      id
+      firstName
+      books{
+        title
+      }
+    }
+  }
+}
+
+{
+  "input": {
+		"authorId": 1,
+    "title": "《朝花夕拾》",
+    "isbn": "散文",
+    "pageCount": 900
+	}
+}
+

@@ -2,6 +2,7 @@ package com.example.graphql.entity;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import lombok.ToString;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -15,6 +16,7 @@ import javax.persistence.Entity;
 @Entity
 @Data
 @EqualsAndHashCode(callSuper = false)
+@ToString(callSuper = true)
 public class Author extends BaseEntity {
 
     @Column(columnDefinition = "varchar(50)")
